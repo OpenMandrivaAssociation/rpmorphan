@@ -28,6 +28,7 @@ It intends to be clone of deborphan Debian tools for RPM packages.
 %install
 %{__rm} -rf %{buildroot}
 %{makeinstall_std}
+%{__rm} -r %{buildroot}%{_docdir}
 
 %{__mv} %{buildroot}%{_bindir}/rpmorphan{.pl,}
 %{__mv} %{buildroot}%{_bindir}/rpmusage{.pl,}
