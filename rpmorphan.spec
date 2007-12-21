@@ -10,6 +10,7 @@ Source0:        http://umn.dl.sourceforge.net/sourceforge/rpmorphan/rpmorphan-%{
 Requires:       perl-Tk
 Requires:       rpm
 BuildArch:      noarch
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 rpmorphan finds orphaned packages on your system. It determines
