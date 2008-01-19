@@ -1,12 +1,12 @@
 Name:           rpmorphan
-Version:        1.0
-Release:        %mkrel 2
+Version:        1.1
+Release:        %mkrel 1
 Epoch:          0
 Summary:        Find orphaned RPM packages
 Group:          System/Configuration/Packaging
 License:        GPL
 URL:            http://rpmorphan.sourceforge.net/
-Source0:        http://umn.dl.sourceforge.net/sourceforge/rpmorphan/rpmorphan-%{version}.tar.gz
+Source0:        http://downloads.sourceforge.net/sourceforge/rpmorphan/rpmorphan-%{version}.tar.gz
 Requires:       perl-Tk
 Requires:       rpm
 BuildArch:      noarch
@@ -23,7 +23,6 @@ It intends to be clone of deborphan Debian tools for RPM packages.
 %setup -q
 
 %build
-%{make}
 
 %install
 %{__rm} -rf %{buildroot}
@@ -40,8 +39,9 @@ It intends to be clone of deborphan Debian tools for RPM packages.
 
 %files
 %defattr(0644,root,root,0755)
-%doc Authors Changelog COPYING NEWS Readme rpmorphan.lsm test_rpmorphan.pl Todo
+%doc Authors Changelog COPYING NEWS Readme rpmorphan.lsm Todo
 %attr(0755,root,root) %{_bindir}/rpmorphan
+%attr(0755,root,root) %{_bindir}/rpmorphan-lib.pl
 %attr(0755,root,root) %{_bindir}/rpmusage
 %{_mandir}/man1/rpmorphan.1*
 %{_mandir}/man1/rpmusage.1*
