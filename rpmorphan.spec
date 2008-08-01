@@ -1,6 +1,6 @@
 Name:           rpmorphan
 Version:        1.1
-Release:        %mkrel 3
+Release:        %mkrel 4
 Epoch:          0
 Summary:        Find orphaned RPM packages
 Group:          System/Configuration/Packaging
