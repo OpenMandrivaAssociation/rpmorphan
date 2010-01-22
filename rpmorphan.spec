@@ -1,6 +1,6 @@
 Name:           rpmorphan
-Version:        1.3
-Release:        %mkrel 2
+Version:        1.6
+Release:        %mkrel 1
 Epoch:          0
 Summary:        Find orphaned RPM packages
 Group:          System/Configuration/Packaging
@@ -29,7 +29,6 @@ It intends to be clone of deborphan Debian tools for RPM packages.
 %install
 %{__rm} -rf %{buildroot}
 %{makeinstall_std}
-%{__rm} -r %{buildroot}%{_docdir}
 
 %{__mv} %{buildroot}%{_bindir}/rpmorphan{.pl,}
 %{__mv} %{buildroot}%{_bindir}/rpmusage{.pl,}
@@ -55,6 +54,8 @@ It intends to be clone of deborphan Debian tools for RPM packages.
 %attr(0755,root,root) %{_bindir}/rpmdep.pl
 %attr(0755,root,root) %{_bindir}/rpmduplicates
 %attr(0755,root,root) %{_bindir}/rpmduplicates.pl
+%attr(0755,root,root) %{_bindir}/rpmorphan-curses-lib.pl
+%attr(0755,root,root) %{_bindir}/rpmorphan-tk-lib.pl
 %{_mandir}/man1/rpmdep.1.lzma
 %{_mandir}/man1/rpmduplicates.1.lzma
 %ghost %{_logdir}/rpmorphan.log
