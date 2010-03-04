@@ -1,5 +1,5 @@
 Name:           rpmorphan
-Version:        1.6
+Version:        1.7
 Release:        %mkrel 1
 Epoch:          0
 Summary:        Find orphaned RPM packages
