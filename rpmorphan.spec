@@ -1,7 +1,6 @@
 Name:           rpmorphan
 Version:        1.7
-Release:        %mkrel 2
-Epoch:          0
+Release:        3
 Summary:        Find orphaned RPM packages
 Group:          System/Configuration/Packaging
 License:        GPLv2+
@@ -12,7 +11,6 @@ Requires:       perl-Tk
 Requires:       rpm
 Requires(post): rpm-helper
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 rpmorphan finds orphaned packages on your system. It determines
@@ -27,8 +25,7 @@ It intends to be clone of deborphan Debian tools for RPM packages.
 %build
 
 %install
-%{__rm} -rf %{buildroot}
-%{makeinstall_std}
+%makeinstall_std
 
 %{__mv} %{buildroot}%{_bindir}/rpmorphan{.pl,}
 %{__mv} %{buildroot}%{_bindir}/rpmusage{.pl,}
@@ -37,9 +34,6 @@ It intends to be clone of deborphan Debian tools for RPM packages.
 
 %{__mkdir_p} %{buildroot}%{_sysconfdir}/logrotate.d
 %{__cp} -p %{SOURCE1} %{buildroot}%{_sysconfdir}/logrotate.d/%{name}
-
-%clean
-%{__rm} -rf %{buildroot}
 
 %post
 %create_ghostfile %{_logdir}/rpmorphan.log root root 644
@@ -56,8 +50,8 @@ It intends to be clone of deborphan Debian tools for RPM packages.
 %attr(0755,root,root) %{_bindir}/rpmduplicates.pl
 %attr(0755,root,root) %{_bindir}/rpmorphan-curses-lib.pl
 %attr(0755,root,root) %{_bindir}/rpmorphan-tk-lib.pl
-%{_mandir}/man1/rpmdep.1.lzma
-%{_mandir}/man1/rpmduplicates.1.lzma
+%{_mandir}/man1/rpmdep.1*
+%{_mandir}/man1/rpmduplicates.1*
 %ghost %{_logdir}/rpmorphan.log
 %{_mandir}/man1/rpmorphan.1*
 %{_mandir}/man1/rpmusage.1*
