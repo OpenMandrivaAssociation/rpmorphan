@@ -1,0 +1,6 @@
+/var/log/rpmorphan.log {
+    notifempty
+    missingok
+    monthly
+    compress
+}
