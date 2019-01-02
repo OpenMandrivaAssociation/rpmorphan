@@ -6,7 +6,7 @@ Group:          System/Configuration/Packaging
 License:        GPLv2+
 URL:            http://rpmorphan.sourceforge.net/
 Source0:        http://downloads.sourceforge.net/sourceforge/rpmorphan/rpmorphan-%{version}.tar.gz
-Source1:        rpmorphan.logrotate
+#Source1:        rpmorphan.logrotate
 Requires:       perl-Tk
 Requires:       rpm
 Requires(post): rpm-helper
@@ -27,48 +27,17 @@ It intends to be clone of deborphan Debian tools for RPM packages.
 %install
 %make_install
 
-%{__mv} %{buildroot}%{_bindir}/rpmorphan{.pl,}
-%{__mv} %{buildroot}%{_bindir}/rpmusage{.pl,}
-%{__perl} -pi -e 's/^rpmorphan\.pl/rpmorphan/g' %{buildroot}%{_bindir}/rpmorphan %{buildroot}%{_mandir}/man1/rpmorphan.1
-%{__perl} -pi -e 's/^rpmusage\.pl/rpmorphan/g' %{buildroot}%{_bindir}/rpmusage %{buildroot}%{_mandir}/man1/rpmusage.1
-
-%{__mkdir_p} %{buildroot}%{_sysconfdir}/logrotate.d
-%{__cp} -p %{SOURCE1} %{buildroot}%{_sysconfdir}/logrotate.d/%{name}
-
-%post
-%create_ghostfile %{_logdir}/rpmorphan.log root root 644
-
 %files
-%defattr(0644,root,root,0755)
-%doc Authors Changelog COPYING NEWS Readme rpmorphan.lsm Todo
-%attr(0755,root,root) %{_bindir}/rpmorphan
-#attr(0755,root,root) #{_bindir}/rpmorphan-lib.pl
-%attr(0755,root,root) %{_bindir}/rpmusage
-%attr(0755,root,root) %{_bindir}/rpmextra
-%attr(0755,root,root) %{_bindir}/rpmextra.pl
-%attr(0755,root,root) %{_bindir}/grpmorphan
-%attr(0755,root,root) %{_bindir}/rpmdep
-%attr(0755,root,root) %{_bindir}/rpmdep.pl
-%attr(0755,root,root) %{_bindir}/rpmduplicates
-%attr(0755,root,root) %{_bindir}/rpmduplicates.pl
-#attr(0755,root,root) #{_bindir}/rpmorphan-curses-lib.pl
-#attr(0755,root,root) #{_bindir}/rpmorphan-tk-lib.pl
-%{_libdir}/rpmorphan/Tk/MListbox.pm
-%{_libdir}/rpmorphan/rpmorphan-curses-lib.pl
-%{_libdir}/rpmorphan/rpmorphan-lib.pl
-%{_libdir}/rpmorphan/rpmorphan-tk-lib.pl
-%{_mandir}/man1/rpmdep.1.xz
-%{_mandir}/man1/rpmextra.1.xz
-%{_mandir}/man1/rpmduplicates.1.xz
-%ghost %{_logdir}/rpmorphan.log
-%{_mandir}/man1/rpmorphan.1*
-%{_mandir}/man1/rpmusage.1*
+%doc rpmorphan.lsm Authors COPYING Changelog NEWS Todo Readme Readme.fr rpmorphanrc.sample
+%{_bindir}/grpmorphan
+%{_bindir}/rpm*
+%{_prefix}/lib/%{name}/
+%{_mandir}/man1/rpm*.1*
+%ghost %{_localstatedir}/log/%{name}.log
+%dir %{_localstatedir}/lib/%{name}
+%config(noreplace) %{_localstatedir}/lib/%{name}/keep
 %config(noreplace) %{_sysconfdir}/logrotate.d/%{name}
-%config /etc/rpmorphanrc
-%dir %{_var}/lib/rpmorphan
-%{_var}/lib/rpmorphan/keep
-/usr/lib/%{name}/locale/en/rpmorphan_trans.pl
-/usr/lib/%{name}/locale/fr_FR/rpmorphan_trans.pl
+%config(noreplace) %{_sysconfdir}/%{name}rc
 
 %changelog
 * Thu Mar 04 2010 Frederik Himpe <fhimpe@mandriva.org> 0:1.7-1mdv2010.1
