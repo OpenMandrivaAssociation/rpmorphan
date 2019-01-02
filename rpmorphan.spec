@@ -42,7 +42,7 @@ It intends to be clone of deborphan Debian tools for RPM packages.
 %defattr(0644,root,root,0755)
 %doc Authors Changelog COPYING NEWS Readme rpmorphan.lsm Todo
 %attr(0755,root,root) %{_bindir}/rpmorphan
-%attr(0755,root,root) %{_bindir}/rpmorphan-lib.pl
+#attr(0755,root,root) #{_bindir}/rpmorphan-lib.pl
 %attr(0755,root,root) %{_bindir}/rpmusage
 %attr(0755,root,root) %{_bindir}/rpmextra
 %attr(0755,root,root) %{_bindir}/rpmextra.pl
@@ -52,7 +52,7 @@ It intends to be clone of deborphan Debian tools for RPM packages.
 %attr(0755,root,root) %{_bindir}/rpmduplicates
 %attr(0755,root,root) %{_bindir}/rpmduplicates.pl
 %attr(0755,root,root) %{_bindir}/rpmorphan-curses-lib.pl
-%attr(0755,root,root) %{_bindir}/rpmorphan-tk-lib.pl
+#attr(0755,root,root) #{_bindir}/rpmorphan-tk-lib.pl
 %{_mandir}/man1/rpmdep.1.xz
 %{_mandir}/man1/rpmextra.1.xz
 %{_mandir}/man1/rpmduplicates.1.xz
