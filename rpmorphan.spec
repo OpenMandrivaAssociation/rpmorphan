@@ -53,6 +53,10 @@ It intends to be clone of deborphan Debian tools for RPM packages.
 %attr(0755,root,root) %{_bindir}/rpmduplicates.pl
 #attr(0755,root,root) #{_bindir}/rpmorphan-curses-lib.pl
 #attr(0755,root,root) #{_bindir}/rpmorphan-tk-lib.pl
+%{_libdir}/rpmorphan/Tk/MListbox.pm
+%{_libdir}/rpmorphan/rpmorphan-curses-lib.pl
+%{_libdir}/rpmorphan/rpmorphan-lib.pl
+%{_libdir}/rpmorphan/rpmorphan-tk-lib.pl
 %{_mandir}/man1/rpmdep.1.xz
 %{_mandir}/man1/rpmextra.1.xz
 %{_mandir}/man1/rpmduplicates.1.xz
