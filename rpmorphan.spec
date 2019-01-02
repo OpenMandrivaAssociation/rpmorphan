@@ -1,7 +1,6 @@
 Name:           rpmorphan
-Version:        1.11
-Release:        2
-Epoch:          0
+Version:        1.19
+Release:        1
 Summary:        Find orphaned RPM packages
 Group:          System/Configuration/Packaging
 License:        GPLv2+
@@ -26,7 +25,7 @@ It intends to be clone of deborphan Debian tools for RPM packages.
 %build
 
 %install
-%makeinstall_std
+%make_install
 
 %{__mv} %{buildroot}%{_bindir}/rpmorphan{.pl,}
 %{__mv} %{buildroot}%{_bindir}/rpmusage{.pl,}
