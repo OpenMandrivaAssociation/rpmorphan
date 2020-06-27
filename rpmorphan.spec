@@ -1,6 +1,6 @@
 Name:           rpmorphan
 Version:        1.19
-Release:        1
+Release:        2
 Summary:        Find orphaned RPM packages
 Group:          System/Configuration/Packaging
 License:        GPLv2+
