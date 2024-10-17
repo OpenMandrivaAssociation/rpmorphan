@@ -4,7 +4,7 @@ Release:        2
 Summary:        Find orphaned RPM packages
 Group:          System/Configuration/Packaging
 License:        GPLv2+
-URL:            http://rpmorphan.sourceforge.net/
+URL:            https://rpmorphan.sourceforge.net/
 Source0:        http://downloads.sourceforge.net/sourceforge/rpmorphan/rpmorphan-%{version}.tar.gz
 #Source1:        rpmorphan.logrotate
 Requires:       perl-Tk
